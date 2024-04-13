@@ -6,21 +6,32 @@ extern "C" {
     #[derive(Debug, Clone)]
     pub type MessageSender;
 
-    #[wasm_bindgen(method, getter)]
-    pub fn tab(this: &MessageSender) -> Option<Tab>;
+    #[wasm_bindgen(method, getter, js_name = documentId)]
+    pub fn document_id(this: &MessageSender) -> Option<String>;
 
-    // TODO is this correct ?
+    #[wasm_bindgen(method, getter, js_name = documentLifecycle)]
+    pub fn document_lifecycle(this: &MessageSender) -> Option<String>;
+
     #[wasm_bindgen(method, getter, js_name = frameId)]
     pub fn frame_id(this: &MessageSender) -> Option<u32>;
 
     #[wasm_bindgen(method, getter)]
     pub fn id(this: &MessageSender) -> Option<String>;
 
+    #[wasm_bindgen(method, getter, js_name = nativeApplication)]
+    pub fn native_application(this: &MessageSender) -> Option<String>;
+
     #[wasm_bindgen(method, getter)]
-    pub fn url(this: &MessageSender) -> Option<String>;
+    pub fn origin(this: &MessageSender) -> Option<String>;
+
+    #[wasm_bindgen(method, getter)]
+    pub fn tab(this: &MessageSender) -> Option<Tab>;
 
     #[wasm_bindgen(method, getter, js_name = tlsChannelId)]
     pub fn tls_channel_id(this: &MessageSender) -> Option<String>;
+
+    #[wasm_bindgen(method, getter)]
+    pub fn url(this: &MessageSender) -> Option<String>;
 }
 
 #[wasm_bindgen]
