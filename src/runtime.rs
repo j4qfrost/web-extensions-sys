@@ -29,7 +29,7 @@ extern "C" {
         message: &Object,
     ) -> Result<JsValue, JsValue>;
 
-    #[wasm_bindgen(method, js_name = getUrl)]
+    #[wasm_bindgen(method, js_name = getURL)]
     pub fn get_url(this: &Runtime, path: &str) -> String;
 
     #[wasm_bindgen(method, js_name = setUninstallURL)]
